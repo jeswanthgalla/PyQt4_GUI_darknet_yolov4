@@ -5,5 +5,7 @@
  
  Ex: camera0 = 'rtsp://{}:{}@192.168.1.40:554/cam/realmonitor?channel=1&subtype=0'
  
+  ![GUI_Output](GUI_Output.png)
+ 
 
  
