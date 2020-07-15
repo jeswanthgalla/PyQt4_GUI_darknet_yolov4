@@ -165,12 +165,6 @@ class CameraWidget(QtGui.QWidget):
             # 3.3 Purpose : Display Risk Analytics and Show Risk Indicators
             #=================================================================        
             text = "Social Distancing Violations: %s" % str(len(red_zone_list))
-            # if len(red_zone_list) < config.Count:
-            #     payload = {"Camera1WarningBit":"False"}
-            #     response = requests.put(url,headers = headers,json = payload)
-            # else:
-            #     payload = {"Camera1WarningBit":"True"}
-            #     response = requests.put(url,headers = headers,json = payload)		# Count People at Risk
             location = (10,900)												# Set the location of the displayed text
             cv2.putText(img, text, location, cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)  # Display Text 
             #=================================================================#
@@ -321,43 +315,26 @@ if __name__ == '__main__':
     screen_width = QtGui.QApplication.desktop().screenGeometry().width()
     screen_height = QtGui.QApplication.desktop().screenGeometry().height()
 
-    # Create Camera Widgets 
-    #username = 'Your camera username!'
-    #password = 'Your camera password!'
 
-    # Stream links
+
+    # Streaming links 
     camera0 = 'sample.mp4'
     camera1 = 'Sample1.mp4'
     camera2 = 'Sample2.mp4'
-    #camera3 = "Sample3.mp4"
-    #camera4 = "Sample4.mp4"
-    #camera3 = 'rtsp://{}:{}@192.168.1.40:554/cam/realmonitor?channel=1&subtype=0'.format(username, password)
-    #camera4 = 'rtsp://{}:{}@192.168.1.44:554/cam/realmonitor?channel=1&subtype=0'.format(username, password)
-    #camera5 = 'rtsp://{}:{}@192.168.1.42:554/cam/realmonitor?channel=1&subtype=0'.format(username, password)
-    #camera6 = 'rtsp://{}:{}@192.168.1.46:554/cam/realmonitor?channel=1&subtype=0'.format(username, password)
-    #camera7 = 'rtsp://{}:{}@192.168.1.41:554/cam/realmonitor?channel=1&subtype=0'.format(username, password)
-
+    
     # Create camera widgets
     print('Creating Camera Widgets...')
     zero = CameraWidget(screen_width//3, screen_height//3, camera0)
     one = CameraWidget(screen_width//3, screen_height//3, camera1)
     two = CameraWidget(screen_width//3, screen_height//3, camera2)
-    #three = CameraWidget(screen_width//3, screen_height//3, camera3)
-    #four = CameraWidget(screen_width//3, screen_height//3, camera4)
-    #five = CameraWidget(screen_width//3, screen_height//3, camera5)
-    #six = CameraWidget(screen_width//3, screen_height//3, camera6)
-    #seven = CameraWidget(screen_width//3, screen_height//3, camera7)
+    
 
     # Add widgets to layout
     print('Adding widgets to layout...')
     ml.addWidget(zero.get_video_frame(),0,0,1,1)
     ml.addWidget(one.get_video_frame(),0,1,1,1)
     ml.addWidget(two.get_video_frame(),0,2,1,1)
-    # ml.addWidget(three.get_video_frame(),1,0,1,1)
-    # ml.addWidget(four.get_video_frame(),1,1,1,1)
-    #ml.addWidget(five.get_video_frame(),1,2,1,1)
-    #ml.addWidget(six.get_video_frame(),2,0,1,1)
-    #ml.addWidget(seven.get_video_frame(),2,1,1,1)
+    
 
     print('Verifying camera credentials...')
 
