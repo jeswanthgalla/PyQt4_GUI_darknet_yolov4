@@ -1,5 +1,5 @@
 # Python_GUI_darknet_yolov4
- GUI Application built using PyQt4.Multithreading to process multiple camera streams and using darknet yolov4 model for detecting people ,count the number of people that are violating the threshold distance.
+ GUI Application built using PyQt4. Multithreading to process multiple camera streams and using darknet yolov4 model for detecting people , to count the number of people that are violating the threshold distance.
  
  If Ipcameras have to be used instead of videofiles, replace Camera0,1,2 with the Ipcamera address.
  
